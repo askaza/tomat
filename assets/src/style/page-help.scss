@@ -1,0 +1,159 @@
+.help {
+  background: url(../img/desktop/help-bg.png) no-repeat;
+  background-position: center -50px;
+  background-size: 1490px auto;
+
+  @include screen-lg() {
+    background: url(../img/tablet/help-bg.png) no-repeat;
+    background-position: center -50px;
+    background-size: 978px auto;
+  }
+  @include screen-sm() {
+    background: url(../img/mobile/help-bg.png) no-repeat;
+    background-position: 50px 107px;
+    background-size: 564px auto;
+
+    .tabs-content {
+        padding-left: 42px;
+        padding-right: 42px;
+    }
+
+    h1 {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.help-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 100;
+
+  @include screen-lg() {
+    justify-content: flex-start;
+  }
+  @include screen-sm() {
+    justify-content: center;
+  }
+
+  .nav-item {
+    background-color: $gray-2;
+    border-radius: 30px;
+    align-items: flex-end;
+    justify-content: space-between;
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    height: 165px;
+    margin: 2px;
+    padding: 20px;
+    position: relative;
+    width: 171px;
+
+    @include screen-sm() {
+      .box {
+        height: 147px;
+        width: 153px;
+      }
+    }
+  }
+
+  .icon {
+    display: block;
+    position: absolute;
+    right: 20px;
+    bottom: 95px;
+  }
+
+  .icon-macos {
+    background: url(../img/icons/macos.png);
+    background-size: contain;
+    width: 47.82px;
+    height: 55.64px;
+  }
+
+  .icon-android {
+    background: url(../img/icons/android.png);
+    background-size: contain;
+    width: 49.68px;
+    height:  58.9px;
+  }
+
+  .icon-ios {
+    background: url(../img/icons/ios.png);
+    background-size: contain;
+    width: 53.68px;
+    height: 53.68px
+  }
+
+  .icon-linux {
+    background: url(../img/icons/linux.png);
+    background-size: contain;
+    width: 46.5px;
+    height: 54.6px;
+  }
+
+  .icon-win {
+    background: url(../img/icons/win1.png);
+    background-size: contain;
+    width: 47.02px;
+    height: 47.02px;
+  }
+
+  span {
+    font-size: $font_size_h5;
+    font-weight: 600;
+  }
+}
+
+.promo {
+  margin-top: -70px;
+  margin-bottom: 130px;
+  z-index: 0;
+
+  .cols {
+    align-items: flex-end;
+    font-size: $font_size_sm;
+  }
+  .box {
+    color: $white;
+    display: flex;
+    align-items: flex-end;
+    font-size: $font_size_h5;
+    font-weight: 500;
+    line-height: $line_height_small;
+    padding: 160px 40px 55px 50px;
+    margin-left: -45px;
+  }
+
+  @include screen-lg() {
+    .box {
+      margin-left: -100px;
+      border-radius: 0 60px 60px 0;
+      padding: 160px 42px 42px 95px;
+    }
+  }
+
+  @include screen-md() {
+    .box {
+      margin-left: 0;
+      border-radius: 60px;
+      font-size: $font_size_sm;
+      padding: 116px 42px 52px 42px;
+    }
+
+    p {
+      padding-left: 42px;
+      padding-right: 42px;
+    }
+  }
+}
+
+.help-list {
+  .help-list-item {
+    display: block;
+  }
+}

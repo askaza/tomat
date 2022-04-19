@@ -1,0 +1,32 @@
+// Переопределение дефолтных значений переменных Bootstrap и определение своих
+@import "variables";
+
+//// Подключение нужных SCSS исходников Bootstrap
+//@import "../../../node_modules/bootstrap/scss/_functions";
+//@import "../../../node_modules/bootstrap/scss/_variables";
+
+
+@import "../../../node_modules/bootstrap/scss/_mixins";
+//@import "../../../node_modules/bootstrap/scss/_root";
+//@import "../../../node_modules/bootstrap/scss/_reboot";
+//@import "../../../node_modules/bootstrap/scss/_type";
+//@import "../../../node_modules/bootstrap/scss/_forms";
+//@import "../../../node_modules/bootstrap/scss/_buttons";
+
+@import "../../../node_modules/bootstrap/scss/_modal";
+@import "../../../node_modules/bootstrap/scss/_transitions";
+//@import "../../../node_modules/bootstrap/scss/_nav";
+//@import "../../../node_modules/bootstrap/scss/_navbar";
+
+//
+//
+//@import "../../../node_modules/bootstrap/scss/_close";
+//
+
+//@import "../../../node_modules/bootstrap/scss/_utilities";
+
+
+
+// Подключение своих SCSS файлов
+
+@import "tomat";

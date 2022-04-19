@@ -1,0 +1,29 @@
+@mixin screen-xl() {
+  @media screen and (min-width: $screen_xl){
+    @content;
+  }
+}
+
+@mixin screen-lg() {
+  @media screen and (max-width: $screen_lg){
+    @content;
+  }
+}
+
+@mixin screen-md() {
+  @media screen and (max-width: $screen_md){
+    @content;
+  }
+}
+
+@mixin screen-sm() {
+  @media screen and (max-width: $screen_sm){
+    @content;
+  }
+}
+
+@mixin screen-container-sm() {
+  @media screen and (max-width: $page_sm_width){
+    @content;
+  }
+}

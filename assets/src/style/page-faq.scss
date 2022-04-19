@@ -1,0 +1,172 @@
+.faq {
+  background: url(../img/desktop/faq-bg.png);
+  background-size: 1500px auto;
+  background-repeat: no-repeat;
+  background-position: center -20px;
+
+  @include screen-lg() {
+    background: url(../img/tablet/faq-bg.png);
+    background-size: 510px auto;
+    background-repeat: no-repeat;
+    background-position: 102% 150px;
+  }
+
+  @include screen-md() {
+    background: url(../img/mobile/faq-bg.png);
+    background-size: 355px auto;
+    background-repeat: no-repeat;
+    background-position: 102% 150px;
+  }
+
+  .tabs-content {
+    position: relative;
+
+    &:before {
+      background: url(../img/desktop/question.png);
+      background-size: contain;
+      content: '';
+      position: absolute;
+      height: 390px;
+      width: 220px;
+      top: -320px;
+      left: 270px;
+    }
+
+    @include screen-lg() {
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+
+.subtitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 70px;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 1;
+
+  @include screen-lg() {
+    display: block;
+    margin-bottom: 23px;
+
+    nav ul {
+      margin: 35px 0 0 0;
+    }
+  }
+
+  @include screen-sm() {
+    margin-top: 115px;
+    margin-left: 40px;
+  }
+}
+
+.faq-nav {
+  display: flex;
+  margin-bottom: 15px;
+  margin-right: -11px;
+
+  .nav-item {
+    background-color: $dark;
+    cursor: pointer;
+    margin-left: 6px;
+    @extend .pill;
+
+    &.active {
+      background-color: $primary;
+    }
+  }
+}
+
+.faq-item {
+  background-color: $gray-3;
+  border-radius: 30px;
+  margin-bottom: 7px;
+
+  .faq-item-head,
+  .faq-item-content {
+    padding: 30px 34px;
+    border-radius: 30px;
+
+    @include screen-sm() {
+      padding-left: 45px;
+      padding-right: 45px;
+
+      .number {
+        left: 45px;
+      }
+
+      .icon {
+        right: 45px;
+      }
+    }
+  }
+
+  .faq-item-head {
+    background-color: $gray-1;
+    border-radius: 30px;
+    padding-bottom: 55px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .faq-item-content {
+    overflow: hidden;
+    font-size: $font_size_sm;
+
+    @include screen-md() {
+      font-size: $font_size_sm * 0.88;
+
+      .float-right, .float-left {
+        float: none;
+        margin: 0 0 20px 0;
+        width: 100%;
+
+        img {
+          height: auto;
+          width: 100%;
+        }
+      }
+    }
+
+  }
+
+  .title {
+    &:after {
+      content: '';
+      background: red;
+      border-radius: 5px;
+      display: block;
+      height: 2px;
+      margin-top: 20px;
+    }
+  }
+
+  .icon {
+    background: url(../img/icons/arrow-faq.png);
+    background-size: contain;
+    transform: scale(-1, -1);
+    height: 9px;
+    right: 34px;
+    bottom: 25px;
+    position: absolute;
+    width: 11px;
+  }
+
+  .number {
+    font-size: 25px;
+    font-weight: 800;
+    position: absolute;
+    bottom: 20px;
+    left: 34px;
+  }
+
+  .collapsed {
+    .icon {
+      transform: none;
+    }
+  }
+}

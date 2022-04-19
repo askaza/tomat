@@ -1,0 +1,155 @@
+.field {
+  margin-top: 27px;
+}
+
+.form-control {
+  border: 0;
+  border-radius: 20px;
+  box-sizing: border-box;
+  min-height: 77px;
+  padding: 18px 22px;
+
+  &:focus {
+    border: none;
+    outline: none;
+  }
+
+  &::-webkit-input-placeholder {
+    color: $dark;
+    font-size: 16px;
+  }
+  &::placeholder {
+    color: $dark;
+    font-size: 16px;
+  }
+}
+
+textarea {
+  height: 255px;
+  resize: none
+}
+
+.questions-form {
+  margin: 135px 12px 145px 12px;
+  position: relative;
+
+  &:before {
+    background: url(../img/desktop/form.png) no-repeat;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 33%;
+    width: 402px;
+    height: 572px;
+    background-size: contain;
+  }
+
+  h2 {
+    margin-bottom: 85px;
+  }
+
+  .form {
+    display: flex;
+    justify-content: space-between;
+    padding: 63px 92px 83px 100px;
+    align-items: flex-end;
+    position: relative;
+
+    .descr {
+      max-width: 70%;
+      margin-bottom: 65px;
+    }
+
+    .form-control,
+    .button {
+      width: 100%;
+    }
+
+    .col:first-child {
+      width: 29%;
+    }
+
+    .col:nth-child(2) {
+      width: 29%;
+    }
+  }
+
+  @include screen-lg() {
+    margin: 135px 0 110px 0;
+
+    .form {
+      padding: 80px 50px 65px 50px;
+      .col:first-child {
+        width: 32%;
+      }
+      .col:nth-child(2) {
+        width: 27%;
+      }
+    }
+  }
+
+  @include screen-md() {
+    background: url(../img/tablet/form.png) no-repeat;
+    background-size: auto 700px;
+    background-position: right 30px;
+
+    &:before {
+      display: none;
+    }
+
+    .form {
+      padding: 50px 0 145px 50px;
+      display: block;
+      width: 370px;
+
+      .col:first-child,
+      .col:nth-child(2) {
+        width: 100%;
+      }
+
+      .col:first-child {
+        margin-bottom: 22px;
+      }
+
+      .button {
+        position: absolute;
+        left: 50px;
+        bottom: 45px;
+        width: 320px;
+      }
+
+      .descr {
+        margin-bottom: 75px;
+      }
+    }
+
+    h2 {
+      margin-bottom: 45px;
+    }
+  }
+
+  @include screen-sm() {
+    background: url(../img/mobile/form.png) no-repeat;
+    background-size: 133px auto;
+    background-position: right 25px;
+    padding: 40px 24px 0 30px;
+
+    .form {
+      padding: 0 0 145px 0;
+      width: 100%;
+
+      h2 {
+        margin-bottom: 35px;
+      }
+
+      .button {
+        left: 0;
+        width: 100%;
+      }
+
+      .descr {
+        margin-bottom: 35px;
+      }
+    }
+  }
+}

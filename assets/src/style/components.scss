@@ -1,0 +1,272 @@
+// typography
+
+h1 {
+  font-size: $font_size_h1_inner_pages;
+  font-weight: 800;
+
+  @include screen-sm() {
+    font-size: $font_size_h4;
+  }
+}
+
+h2 {
+  font-size: $font_size_h2;
+  font-weight: 800;
+
+  @include screen-sm() {
+    font-size: $font_size_h4;
+  }
+}
+
+h3 {
+  font-size: $font_size_h3;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+h4 {
+  font-size: $font_size_h4;
+  font-weight: 800;
+}
+
+h6 {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+p {
+  font-size: $font_size_sm;
+  line-height: $line_height_medium;
+}
+
+ul {
+  list-style-position: inside;
+  list-style-type: disc;
+  margin-top: 25px;
+  margin-left: 10px;
+
+  li {
+    font-size: $font_size_sm;
+    line-height: $line_height_small;
+    margin-bottom: 15px;
+  }
+}
+
+
+.box {
+  &.primary {
+    background-color: $primary;
+  }
+  &.gray {
+    background-color: $secondary;
+  }
+  &.gray-dark {
+    background-color: $dark;
+  }
+  &.rounded {
+    border-radius: $border-radius_base;
+  }
+  &.rounded-top {
+    border-radius: $border-radius_base $border-radius_base 0 0;
+  }
+  &.rounded-bottom {
+    border-radius:  0 0 $border-radius_base $border-radius_base;
+  }
+}
+
+
+.button {
+  border-radius: 20px;
+  color: $white;
+  cursor: pointer;
+  padding: 25px;
+  height: 77px;
+  text-decoration: none;
+  display: inline-block;
+  line-height: 1.5;
+  text-align: center;
+
+  &.primary {
+    background-color: $primary;
+  }
+  &.gray {
+    background-color: $primary;
+  }
+  &.white {
+    background-color: $white;
+    color: $black;
+  }
+
+  &.sm {
+    height: 62px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+}
+
+// tabs
+.tab-pane {
+  &.fade {
+    height: 0;
+    overflow: hidden;
+  }
+}
+
+.pill {
+  border-radius: 20px;
+  color: $white;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 17px;
+
+  &.primary {
+    background-color: $primary;
+  }
+
+  &.gray {
+    background-color: $dark;
+  }
+}
+
+
+.modal {
+  .btn-close {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: $primary;
+    display: block;
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    top: 12px;
+    right: 12px;
+
+    &:after {
+      content: 'x';
+      color: $black;
+      position: absolute;
+      font-size: 20px;
+      font-weight: 800;
+      top: 3px;
+      left: 9px;
+    }
+  }
+
+  img {
+    border-radius: 30px;
+  }
+}
+
+.lightbox {
+  position: relative;
+
+  .icon-zoom {
+    position: absolute;
+    width: 77px;
+    height: 77px;
+    background: $primary url(../img/icons/zoom.svg);
+    display: block;
+    border-radius: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    top: 20px;
+    left: 20px;
+  }
+}
+
+.cols {
+  display: flex;
+  justify-content: space-between;
+
+  .col {
+    position: relative;
+    width: 45%;
+  }
+
+  &.image-cols {
+    .col:nth-child(2) {
+      width: 49%;
+    }
+  }
+
+  @include screen-md {
+    display: block;
+
+    .col {
+      width: 100%;
+
+      & + .col {
+        margin: 40px 0;
+      }
+    }
+
+    &.image-cols {
+      .col:nth-child(2) {
+        width: 100%;
+      }
+    }
+  }
+
+  & + .cols {
+    margin-top: 50px;
+  }
+}
+
+.ordered-list {
+  list-style: none;
+  counter-reset: my-awesome-counter;
+
+  > li {
+    counter-increment: my-awesome-counter;
+    margin-bottom: 20px;
+    position: relative;
+
+    &:after {
+      background-color: $primary;
+      border-radius: 4px;
+      content: '';
+      height: 4px;
+      position: absolute;
+      top: 40px;
+      left: 0;
+      width: 100%;
+    }
+
+    &:before {
+      content: counter(my-awesome-counter);
+      color: $black;
+      display: block;
+      font-weight: 800;
+      font-size: $font_size_lg;
+      margin-bottom: 50px;
+    }
+  }
+}
+
+
+.unordered-list {
+  list-style: none;
+
+  > li {
+    position: relative;
+    padding-top: 20px;
+    padding-right: 10px;
+    margin-bottom: 20px;
+    font-size: $font_size_base;
+
+    &:after {
+      background-color: $primary;
+      border-radius: 4px;
+      content: "";
+      height: 4px;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      left: 0;
+    }
+  }
+}
