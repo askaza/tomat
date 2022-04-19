@@ -1,7 +1,5 @@
-//JQuery Module Pattern
 "use strict";
 
-// An object literal
 const app = {
     init() {
         app.initTabsNavigation();
@@ -10,12 +8,14 @@ const app = {
     },
     imgLightbox() {
         var modal = document.getElementById('lightbox')
-        modal.addEventListener('show.bs.modal', function (event) {
-            var button = event.relatedTarget
-            var src = button.getAttribute('data-bs-src')
-            var img = modal.querySelector('img')
-            img.src = src
-        })
+        if (modal.length) {
+            modal.addEventListener('show.bs.modal', function (event) {
+                var button = event.relatedTarget
+                var src = button.getAttribute('data-bs-src')
+                var img = modal.querySelector('img')
+                img.src = src
+            })
+        }
 
     },
     setNumbers() {
