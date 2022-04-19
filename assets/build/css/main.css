@@ -1385,23 +1385,23 @@ ul li {
   }
 }
 
-.promo {
+.hero {
   padding-top: 400px;
   padding-left: 50%;
 }
-.promo h1 {
+.hero h1 {
   margin-bottom: 80px;
   text-transform: capitalize;
 }
-.promo .promo-list {
+.hero .promo-list {
   display: flex;
 }
-.promo .promo-list .list-item {
+.hero .promo-list .list-item {
   flex-grow: 0;
   flex-shrink: 0;
   width: 160px;
 }
-.promo .promo-list .list-item + .list-item {
+.hero .promo-list .list-item + .list-item {
   margin-left: 40px;
 }
 
