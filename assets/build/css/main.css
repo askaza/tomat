@@ -433,13 +433,13 @@ footer, header, hgroup, menu, nav, section {
   }
 }
 
-.container-sm {
+.container-sm, .prices {
   margin: 0 auto;
   position: relative;
   width: 1060px;
 }
 @media screen and (max-width: 1285px) {
-  .container-sm {
+  .container-sm, .prices {
     min-width: 320px;
     width: auto;
   }
@@ -459,11 +459,11 @@ footer, header, hgroup, menu, nav, section {
 
 .menu {
   display: flex;
-  margin-top: 5px;
+  margin-top: 0;
 }
 .menu .menu-item {
   list-style: none;
-  margin: 0 43px 0 0;
+  margin: 0 38px 0 0;
 }
 .menu .menu-item a {
   display: inline-block;
@@ -893,16 +893,16 @@ ul li {
   margin-top: 50px;
 }
 
-.ordered-list {
+.ordered-list, .hero .promo-list {
   list-style: none;
   counter-reset: my-awesome-counter;
 }
-.ordered-list > li {
+.ordered-list > li, .hero .promo-list > li {
   counter-increment: my-awesome-counter;
   margin-bottom: 20px;
   position: relative;
 }
-.ordered-list > li:after {
+.ordered-list > li:after, .hero .promo-list > li:after {
   background-color: #FF0000;
   border-radius: 4px;
   content: "";
@@ -912,7 +912,7 @@ ul li {
   left: 0;
   width: 100%;
 }
-.ordered-list > li:before {
+.ordered-list > li:before, .hero .promo-list > li:before {
   content: counter(my-awesome-counter);
   color: #000;
   display: block;
@@ -921,17 +921,17 @@ ul li {
   margin-bottom: 50px;
 }
 
-.unordered-list {
+.unordered-list, .prices .prices-description-list {
   list-style: none;
 }
-.unordered-list > li {
+.unordered-list > li, .prices .prices-description-list > li {
   position: relative;
   padding-top: 20px;
   padding-right: 10px;
   margin-bottom: 20px;
   font-size: 18px;
 }
-.unordered-list > li:after {
+.unordered-list > li:after, .prices .prices-description-list > li:after {
   background-color: #FF0000;
   border-radius: 4px;
   content: "";
@@ -943,7 +943,10 @@ ul li {
 }
 
 .main {
-  background-size: 1300px auto;
+  background: url("../img/desktop/home-bg.png");
+  background-size: 1650px auto;
+  background-repeat: no-repeat;
+  background-position: center -70px;
 }
 .main h1 {
   font-size: 70px;
@@ -967,7 +970,9 @@ ul li {
   z-index: 2;
 }
 .devices .descr {
-  margin: 45px 0;
+  margin: 40px 0;
+  font-size: 18px;
+  line-height: 1.1;
 }
 .devices .button {
   width: 100%;
@@ -975,13 +980,13 @@ ul li {
 .devices:before {
   background: url(../img/desktop/devices.png) no-repeat;
   background-position: 0 0;
-  content: "";
   background-size: contain;
   display: block;
+  content: "";
   position: absolute;
-  right: 45px;
+  right: 50px;
   bottom: 0;
-  width: 1047px;
+  width: 1045px;
   height: 590px;
 }
 @media screen and (max-width: 1285px) {
@@ -1049,10 +1054,12 @@ ul li {
   position: relative;
 }
 .hero2 h4 {
-  margin-bottom: 45px;
+  margin-bottom: 65px;
 }
 .hero2 .descr {
   margin-bottom: 35px;
+  font-size: 18px;
+  line-height: 1.1;
 }
 .hero2 .button {
   width: 225px;
@@ -1075,7 +1082,7 @@ ul li {
 }
 .hero2 .col {
   min-height: 400px;
-  width: 22%;
+  width: 26%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1103,20 +1110,20 @@ ul li {
   border-radius: 120px;
   background-color: #E5E5E5;
   bottom: 0;
-  left: 26%;
-  width: 46%;
+  left: 31%;
+  width: 41%;
   position: absolute;
   height: 335px;
 }
 .hero2 .img:before {
   background: url(../img/dns.png) no-repeat;
-  background-size: 720px auto;
+  background-size: 389px auto;
   background-position: top center;
   content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
-  height: 480px;
+  height: 490px;
   width: 400px;
   margin-left: -200px;
 }
@@ -1150,7 +1157,7 @@ ul li {
   background: #E5E5E5;
   border-radius: 60px;
   margin-bottom: 150px;
-  padding: 107px 0 74px 128px;
+  padding: 105px 0 105px 130px;
   position: relative;
   width: 1380px;
 }
@@ -1159,6 +1166,17 @@ ul li {
 }
 .encryption .cols {
   position: relative;
+}
+.encryption .cols .col {
+  width: 32%;
+}
+.encryption .cols .col:nth-child(1) .img {
+  display: block;
+  margin: 65px 0 0 50px;
+}
+.encryption .cols .col:nth-child(2) .img {
+  display: block;
+  margin: 90px 0 0 -120px;
 }
 @media screen and (max-width: 640px) {
   .encryption .cols {
@@ -1169,6 +1187,8 @@ ul li {
   color: #FF0000;
   font-size: 150px;
   font-weight: 800;
+  display: block;
+  line-height: 1;
 }
 .encryption .speed-units {
   font-size: 40px;
@@ -1178,19 +1198,21 @@ ul li {
 .encryption .note {
   color: #FF0000;
   transform: rotate(-90deg);
-  right: 100px;
-  top: 585px;
+  right: 35px;
+  bottom: 350px;
   position: absolute;
   display: block;
+  font-size: 14px;
+  font-weight: 600;
 }
 .encryption .arrows {
   background: url(../img/enc-arrows.png) no-repeat;
-  height: 92px;
-  width: 327px;
   background-size: 327px auto;
+  height: 92px;
   position: absolute;
-  top: 300px;
-  left: 400px;
+  top: 115px;
+  left: 425px;
+  width: 327px;
 }
 @media screen and (max-width: 1060px) {
   .encryption .arrows {
@@ -1204,12 +1226,13 @@ ul li {
 }
 .encryption .eye {
   background: url(../img/eye2.png) no-repeat;
-  height: 163px;
-  width: 233px;
+  height: 122px;
+  width: 208px;
   background-size: contain;
   position: absolute;
-  bottom: -40px;
-  left: 400px;
+  bottom: -70px;
+  left: 50%;
+  margin-left: -35px;
 }
 @media screen and (max-width: 1060px) {
   .encryption {
@@ -1271,6 +1294,7 @@ ul li {
 .prices .prices-description-list {
   display: flex;
   margin-top: 10px;
+  margin-right: -110px;
 }
 .prices .prices-description-list li {
   max-width: 235px;
@@ -1278,11 +1302,12 @@ ul li {
 }
 .prices .prices-list {
   display: flex;
+  margin-right: -25px;
 }
 .prices .prices-list .prices-list-item {
   border-radius: 60px;
-  margin-right: 9px;
-  margin-bottom: 9px;
+  margin-right: 10px;
+  margin-bottom: 10px;
   padding: 38px 53px;
   display: flex;
   flex-direction: column;
@@ -1310,18 +1335,18 @@ ul li {
 }
 .prices .prices-list .prices-list-item.first {
   background: #E5E5E5 url(../img/tarif1.png) no-repeat right 145px;
-  background-size: auto 222px;
+  background-size: auto 215px;
 }
 .prices .prices-list .prices-list-item.second {
-  background: #FF0000 url(../img/tarif2.png) no-repeat right 145px;
-  background-size: auto 256px;
+  background: #FF0000 url(../img/tarif2.png) no-repeat right 135px;
+  background-size: auto 230px;
 }
 .prices .prices-list .prices-list-item.second .title, .prices .prices-list .prices-list-item.second .descr, .prices .prices-list .prices-list-item.second .price, .prices .prices-list .prices-list-item.second .profit {
   color: #fff;
 }
 .prices .prices-list .prices-list-item.third {
-  background: #000 url(../img/tarif3.png) no-repeat right 145px;
-  background-size: auto 298px;
+  background: #000 url(../img/tarif3.png) no-repeat right 135px;
+  background-size: auto 275px;
 }
 .prices .prices-list .prices-list-item.third .title, .prices .prices-list .prices-list-item.third .descr, .prices .prices-list .prices-list-item.third .price, .prices .prices-list .prices-list-item.third .profit {
   color: #fff;
@@ -1386,8 +1411,14 @@ ul li {
 }
 
 .hero {
-  padding-top: 400px;
-  padding-left: 50%;
+  background: url(../img/desktop/home-bg1.png) no-repeat;
+  background-position: 72px bottom;
+  background-size: 563px auto;
+  padding-top: 350px;
+  padding-left: 54%;
+  padding-bottom: 150px;
+  position: relative;
+  z-index: 1;
 }
 .hero h1 {
   margin-bottom: 80px;
@@ -1402,7 +1433,92 @@ ul li {
   width: 160px;
 }
 .hero .promo-list .list-item + .list-item {
-  margin-left: 40px;
+  margin-left: 55px;
+}
+.hero .promo-list .list-item:before {
+  margin-bottom: 30px;
+}
+
+.safety {
+  margin-bottom: 200px;
+  position: relative;
+}
+.safety .box {
+  height: 595px;
+  top: -100px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+.safety .content {
+  padding: 140px 50px 0 122px;
+  position: relative;
+}
+.safety .cols {
+  display: flex;
+  justify-content: space-between;
+}
+.safety .cols .col {
+  width: 19%;
+}
+.safety .button {
+  margin-top: -30px;
+  width: 215px;
+}
+.safety .map {
+  background: url(../img/world.png) no-repeat;
+  background-size: contain;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  height: 752px;
+  margin-left: -300px;
+  width: 601px;
+}
+.safety .map .note {
+  color: #fff;
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  width: 40%;
+  font-size: 24px;
+}
+.safety .icons-list {
+  margin-top: 105px;
+  margin-left: 0;
+}
+.safety .icons-list .list-item {
+  list-style: none;
+  margin-bottom: 105px;
+}
+.safety .icons-list .text {
+  font-size: 24px;
+}
+.safety .icon {
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  margin-bottom: 20px;
+}
+.safety .icon-in {
+  background-image: url(../img/icons/in.png);
+  width: 65px;
+  height: 53px;
+}
+.safety .icon-out {
+  background-image: url(../img/icons/out.png);
+  width: 63px;
+  height: 51px;
+}
+.safety .icon-crypto {
+  background-image: url(../img/icons/crypto.png);
+  width: 63px;
+  height: 52px;
+}
+.safety .icon-tg {
+  background-image: url(../img/icons/tg.png);
+  width: 66px;
+  height: 52px;
 }
 
 .faq {
@@ -1451,7 +1567,7 @@ ul li {
   justify-content: space-between;
   align-items: flex-end;
   margin-top: 70px;
-  margin-bottom: 60px;
+  margin-bottom: 70px;
   position: relative;
   z-index: 1;
 }
