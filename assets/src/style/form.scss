@@ -6,7 +6,7 @@
   border: 0;
   border-radius: 20px;
   box-sizing: border-box;
-  min-height: 77px;
+  min-height: $button_height_base;
   padding: 18px 22px;
 
   &:focus {
@@ -16,11 +16,11 @@
 
   &::-webkit-input-placeholder {
     color: $dark;
-    font-size: 16px;
+    font-size: $font_size_sm;
   }
   &::placeholder {
     color: $dark;
-    font-size: 16px;
+    font-size: $font_size_sm;
   }
 }
 
@@ -65,11 +65,7 @@ textarea {
       width: 100%;
     }
 
-    .col:first-child {
-      width: 29%;
-    }
-
-    .col:nth-child(2) {
+    .col {
       width: 29%;
     }
   }

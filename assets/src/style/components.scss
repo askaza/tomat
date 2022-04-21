@@ -31,7 +31,7 @@ h4 {
 
 h6 {
   font-weight: 600;
-  font-size: 18px;
+  font-size: $font_size_h6;
 }
 
 p {
@@ -52,35 +52,21 @@ ul {
   }
 }
 
-
 .box {
+  background-color: $secondary;
+  border-radius: $border-radius_base;
+
   &.primary {
     background-color: $primary;
   }
-  &.gray {
-    background-color: $secondary;
-  }
-  &.gray-dark {
-    background-color: $dark;
-  }
-  &.rounded {
-    border-radius: $border-radius_base;
-  }
-  &.rounded-top {
-    border-radius: $border-radius_base $border-radius_base 0 0;
-  }
-  &.rounded-bottom {
-    border-radius:  0 0 $border-radius_base $border-radius_base;
-  }
 }
-
 
 .button {
   border-radius: 20px;
   color: $white;
   cursor: pointer;
   padding: 25px;
-  height: 77px;
+  height: $button_height_base;
   text-decoration: none;
   display: inline-block;
   line-height: 1.5;
@@ -96,7 +82,6 @@ ul {
     background-color: $white;
     color: $black;
   }
-
   &.sm {
     height: 62px;
     padding-top: 18px;
@@ -112,6 +97,7 @@ ul {
   }
 }
 
+// pill
 .pill {
   border-radius: 20px;
   color: $white;
@@ -129,7 +115,7 @@ ul {
   }
 }
 
-
+// modal
 .modal {
   .btn-close {
     position: absolute;
@@ -160,13 +146,15 @@ ul {
   }
 }
 
+// lightbox
+
 .lightbox {
   position: relative;
 
   .icon-zoom {
     position: absolute;
-    width: 77px;
-    height: 77px;
+    width: $button_height_base;
+    height: $button_height_base;
     background: $primary url(../img/icons/zoom.svg);
     display: block;
     border-radius: 20px;
@@ -178,6 +166,7 @@ ul {
   }
 }
 
+// cols
 .cols {
   display: flex;
   justify-content: space-between;
@@ -216,6 +205,8 @@ ul {
   }
 }
 
+
+// ordered list
 .ordered-list {
   list-style: none;
   counter-reset: my-awesome-counter;
@@ -247,7 +238,7 @@ ul {
   }
 }
 
-
+// unordered list
 .unordered-list {
   list-style: none;
 

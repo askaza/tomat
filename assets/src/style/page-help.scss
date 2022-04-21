@@ -10,7 +10,7 @@
   }
   @include screen-sm() {
     background: url(../img/mobile/help-bg.png) no-repeat;
-    background-position: 50px 107px;
+    background-position: -30px 107px;
     background-size: 564px auto;
 
     .tabs-content {
@@ -155,5 +155,28 @@
 .help-list {
   .help-list-item {
     display: block;
+  }
+}
+
+@include screen-md {
+  .help {
+    .cols {
+      display: block;
+    }
+
+    .subtitle {
+      margin-top: 125px;
+      margin-bottom: 115px;
+    }
+
+    .help-nav {
+      .nav-item {
+        width: 152.91px;
+        height: 147.43px;
+      }
+      .icon {
+        bottom: 80px;
+      }
+    }
   }
 }

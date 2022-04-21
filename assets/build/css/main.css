@@ -6,7 +6,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1200;
+  z-index: 1055;
   display: none;
   width: 100%;
   height: 100%;
@@ -374,8 +374,7 @@
   line-height: 1.1;
 }
 
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+article, footer, header, nav, section {
   display: block;
 }
 
@@ -410,6 +409,36 @@ footer, header, hgroup, menu, nav, section {
 }
 @media screen and (max-width: 640px) {
   .visible-sm {
+    display: block !important;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .hidden-md {
+    display: none !important;
+  }
+}
+
+.visible-md {
+  display: none !important;
+}
+@media screen and (max-width: 860px) {
+  .visible-md {
+    display: block !important;
+  }
+}
+
+@media screen and (max-width: 1285px) {
+  .hidden-lg {
+    display: none !important;
+  }
+}
+
+.visible-lg {
+  display: none !important;
+}
+@media screen and (max-width: 1285px) {
+  .visible-lg {
     display: block !important;
   }
 }
@@ -449,12 +478,19 @@ footer, header, hgroup, menu, nav, section {
   justify-content: space-between;
   display: flex;
   padding: 30px 0 30px;
+  position: relative;
+  z-index: 10;
 }
 
 .nav {
   display: flex;
   margin-top: 12px;
-  align-items: baseline;
+  align-items: center;
+}
+.nav .icon-close {
+  cursor: pointer;
+  display: none;
+  margin-right: 30px;
 }
 
 .menu {
@@ -489,13 +525,21 @@ footer, header, hgroup, menu, nav, section {
 .lang {
   color: #000;
   font-size: 24px;
+  align-items: center;
+  display: flex;
   margin-right: 13px;
+  margin-bottom: 15px;
   text-decoration: none;
+}
+.lang .icon {
+  margin-left: 5px;
 }
 
 .logo {
   display: block;
   text-decoration: none;
+  position: relative;
+  z-index: 10;
 }
 .logo .logo-img {
   display: block;
@@ -508,6 +552,11 @@ footer, header, hgroup, menu, nav, section {
   font-size: 13px;
   font-weight: 800;
   text-transform: uppercase;
+}
+@media screen and (max-width: 640px) {
+  .logo .logo-text {
+    margin-top: 12px;
+  }
 }
 
 .footer {
@@ -558,6 +607,100 @@ footer, header, hgroup, menu, nav, section {
     position: static;
     text-align: right;
   }
+}
+
+.nav-mobile {
+  display: none;
+}
+.nav-mobile .icon-menu-mobile {
+  margin-right: 30px;
+}
+.nav-mobile .lang {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 1060px) {
+  .nav-mobile {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav {
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    padding: 50px;
+    background: #f1f0f0;
+    border-radius: 0 0 30px 30px;
+    margin: 0;
+    justify-content: flex-end;
+    transition: top 0.35s ease;
+    top: -100%;
+  }
+  .nav.slide {
+    top: 0;
+  }
+  .nav .icon-close {
+    display: block;
+  }
+
+  .lang {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+@media screen and (max-width: 860px) {
+  .nav-mobile .lang {
+    display: none;
+  }
+
+  .nav {
+    display: block;
+  }
+  .nav .icon-close {
+    display: block;
+    position: absolute;
+    right: 5px;
+    top: 50px;
+  }
+  .nav .menu {
+    display: block;
+    padding-top: 160px;
+    width: 100%;
+  }
+  .nav .menu .menu-item {
+    display: block;
+    margin-bottom: 50px;
+    margin-right: 0;
+  }
+  .nav .menu a {
+    display: block;
+  }
+}
+.icon-menu-arrow {
+  background: url(../img/icons/arrow-menu.png) no-repeat;
+  background-size: contain;
+  display: block;
+  height: 12px;
+  width: 12px;
+}
+
+.icon-close {
+  background: url(../img/icons/close.png) no-repeat;
+  background-size: contain;
+  display: block;
+  height: 33px;
+  width: 33px;
+}
+
+.icon-menu-mobile {
+  background: url(../img/icons/menu-mobile.png) no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  display: block;
+  height: 31px;
+  width: 41px;
 }
 
 .field {
@@ -625,10 +768,7 @@ textarea {
 .questions-form .form .button {
   width: 100%;
 }
-.questions-form .form .col:first-child {
-  width: 29%;
-}
-.questions-form .form .col:nth-child(2) {
+.questions-form .form .col {
   width: 29%;
 }
 @media screen and (max-width: 1285px) {
@@ -755,23 +895,12 @@ ul li {
   margin-bottom: 15px;
 }
 
-.box.primary {
-  background-color: #FF0000;
-}
-.box.gray {
+.box {
   background-color: #E5E5E5;
-}
-.box.gray-dark {
-  background-color: #8E8E8E;
-}
-.box.rounded {
   border-radius: 60px;
 }
-.box.rounded-top {
-  border-radius: 60px 60px 0 0;
-}
-.box.rounded-bottom {
-  border-radius: 0 0 60px 60px;
+.box.primary {
+  background-color: #FF0000;
 }
 
 .button {
@@ -1108,12 +1237,13 @@ ul li {
 }
 .hero2 .img {
   border-radius: 120px;
-  background-color: #E5E5E5;
+  background-color: #e5e5e5;
   bottom: 0;
-  left: 31%;
-  width: 41%;
+  left: 50%;
+  width: 40%;
   position: absolute;
   height: 335px;
+  margin-left: -20%;
 }
 .hero2 .img:before {
   background: url(../img/dns.png) no-repeat;
@@ -1129,26 +1259,9 @@ ul li {
 }
 @media screen and (max-width: 1285px) {
   .hero2 .img:before {
-    background-size: 550px auto;
+    background-size: 320px auto;
     height: 375px;
-    width: 360px;
-    margin-left: -180px;
-  }
-}
-@media screen and (max-width: 1060px) {
-  .hero2 .img {
-    border-radius: 40px;
-    height: 245px;
-    position: relative;
-    margin-bottom: 70px;
-    margin-left: 0;
-    left: 0;
-    width: 100%;
-  }
-  .hero2 .img:before {
-    background-size: 460px auto;
-    height: 300px;
-    width: 360px;
+    width: 405px;
     margin-left: -180px;
   }
 }
@@ -1214,16 +1327,6 @@ ul li {
   left: 425px;
   width: 327px;
 }
-@media screen and (max-width: 1060px) {
-  .encryption .arrows {
-    width: 240px;
-  }
-}
-@media screen and (max-width: 640px) {
-  .encryption .arrows {
-    transform: rotate(90deg);
-  }
-}
 .encryption .eye {
   background: url(../img/eye2.png) no-repeat;
   height: 122px;
@@ -1233,22 +1336,6 @@ ul li {
   bottom: -70px;
   left: 50%;
   margin-left: -35px;
-}
-@media screen and (max-width: 1060px) {
-  .encryption {
-    padding: 53px 0 53px 43px;
-  }
-  .encryption .speed-number {
-    font-size: 100px;
-  }
-  .encryption .speed-units {
-    font-size: 30px;
-  }
-  .encryption .eye {
-    bottom: -150px;
-    height: 97px;
-    width: 139px;
-  }
 }
 @media screen and (max-width: 860px) {
   .encryption h2 {
@@ -1357,6 +1444,7 @@ ul li {
   }
   .prices .prices-list {
     flex-wrap: wrap;
+    margin-right: 0;
   }
   .prices .prices-list .prices-list-item {
     flex-shrink: 0;
@@ -1392,7 +1480,7 @@ ul li {
     padding-right: 41px;
   }
 }
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 860px) {
   .prices {
     margin-bottom: 30px;
   }
@@ -1441,6 +1529,9 @@ ul li {
 
 .safety {
   margin-bottom: 200px;
+  position: relative;
+}
+.safety .wrap {
   position: relative;
 }
 .safety .box {
@@ -1521,6 +1612,362 @@ ul li {
   height: 52px;
 }
 
+@media screen and (max-width: 1285px) {
+  .main {
+    background: url("../img/tablet/home-bg.png");
+    background-size: 881px auto;
+    background-repeat: no-repeat;
+    background-position: -10px -50px;
+  }
+
+  .hero {
+    background: none;
+    padding-left: 80px;
+    padding-bottom: 75px;
+  }
+  .hero h1 {
+    font-size: 55px;
+    margin-bottom: 85px;
+    text-transform: capitalize;
+    padding-left: 325px;
+    padding-top: 70px;
+  }
+
+  .safety {
+    margin-bottom: 160px;
+  }
+  .safety .box {
+    border-radius: 0;
+    top: 0;
+    right: -500px;
+    left: auto;
+    height: 100%;
+  }
+  .safety .content {
+    border-radius: 60px;
+    background: #E5E5E5;
+    padding: 50px 50px 0 60px;
+  }
+  .safety .cols {
+    display: block;
+  }
+  .safety .cols .col {
+    width: 100%;
+  }
+  .safety .cols .col .icons-list {
+    margin-top: 150px;
+    margin-left: 0;
+  }
+  .safety .cols .col .icons-list .list-item {
+    width: 200px;
+    margin-bottom: 65px;
+  }
+  .safety .cols .col:nth-child(2) .icons-list {
+    display: flex;
+    margin-top: 90px;
+  }
+  .safety .cols .col:nth-child(2) .icons-list .list-item {
+    margin-right: 90px;
+  }
+  .safety .map {
+    left: 245px;
+    right: auto;
+    margin: 0;
+    top: 45px;
+    height: 665px;
+    width: 500px;
+  }
+  .safety .map .note {
+    color: #fff;
+    position: absolute;
+    bottom: 75px;
+    right: 40px;
+    width: 50%;
+    font-size: 24px;
+  }
+  .safety .button {
+    margin-top: 20px;
+    margin-left: 53px;
+  }
+
+  .prices .prices-description-list {
+    margin-right: 0;
+  }
+
+  .encryption {
+    padding: 53px 0 80px 43px;
+  }
+  .encryption .speed-number {
+    font-size: 100px;
+  }
+  .encryption .speed-units {
+    font-size: 30px;
+  }
+  .encryption .note {
+    transform: none;
+    right: auto;
+    left: 520px;
+    bottom: 90px;
+    max-width: 220px;
+  }
+  .encryption .eye {
+    bottom: -90px;
+    width: 208px;
+    height: 122px;
+    left: 405px;
+  }
+  .encryption .arrows {
+    background-size: 260px auto;
+    height: 92px;
+    position: absolute;
+    top: 70px;
+    left: 265px;
+    width: 200px;
+  }
+  .encryption .cols {
+    justify-content: flex-start;
+  }
+  .encryption .cols .col {
+    width: 36%;
+  }
+  .encryption .cols .col:nth-child(1) .img {
+    margin: 60px 0 0 0;
+    width: 370px;
+    height: auto;
+  }
+  .encryption .cols .col:nth-child(2) .img {
+    margin: 60px 0 0 -50px;
+  }
+}
+@media screen and (max-width: 1060px) {
+  .hero h1 {
+    margin-bottom: 85px;
+  }
+
+  .hero2 {
+    padding-top: 35px;
+  }
+  .hero2 .img {
+    border-radius: 40px;
+    height: 400px;
+    position: relative;
+    margin-bottom: 70px;
+    margin-left: 0;
+    left: 0;
+    width: 100%;
+  }
+  .hero2 .img:before {
+    background-size: 380px auto;
+    height: 475px;
+    width: 380px;
+    margin-left: -200px;
+  }
+
+  .devices {
+    padding-left: 55px;
+    padding-top: 50px;
+    height: 725px;
+    margin-bottom: 150px;
+  }
+  .devices:before {
+    background-size: contain;
+    display: block;
+    position: absolute;
+    right: -50px;
+    bottom: 0;
+    height: 650px;
+    width: 750px;
+  }
+  .devices .descr {
+    min-height: 320px;
+  }
+}
+@media screen and (max-width: 860px) {
+  .prices .subtitle {
+    padding-left: 50px;
+  }
+
+  .cols {
+    display: flex;
+  }
+}
+@media screen and (max-width: 640px) {
+  .main {
+    background: url(../img/mobile/home-bg.png);
+    background-size: 650px auto;
+    background-repeat: no-repeat;
+    background-position: -35px 140px;
+  }
+
+  .hero {
+    padding-left: 48px;
+    padding-right: 48px;
+    padding-top: 340px;
+    padding-bottom: 30px;
+  }
+  .hero h1 {
+    font-size: 45px;
+    padding-left: 0;
+    margin-bottom: 120px;
+  }
+  .hero .promo-list {
+    display: block;
+  }
+  .hero .promo-list .list-item {
+    margin-left: 0 !important;
+    width: 100%;
+  }
+
+  .safety {
+    margin-bottom: 100px;
+  }
+  .safety h2 {
+    margin-bottom: 55px;
+  }
+  .safety .content {
+    padding-bottom: 155px;
+  }
+  .safety .box {
+    right: -200px;
+  }
+  .safety .cols .col:nth-child(2) .icons-list {
+    display: block;
+    margin-top: 20px;
+  }
+  .safety .cols .col .icons-list {
+    margin-top: 0;
+  }
+  .safety .cols .col .icons-list .list-item {
+    align-items: center;
+    display: flex;
+    margin-bottom: 53px;
+    width: auto;
+  }
+  .safety .cols .col .icons-list .list-item .icon {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin: 0 30px 0 0;
+  }
+  .safety .cols .col .icons-list .list-item .text {
+    font-size: 20px;
+  }
+  .safety .map {
+    background-image: url(../img/mobile/world.png);
+    position: relative;
+    margin: -175px auto 0;
+    height: 420px;
+    left: 0;
+    right: 0;
+    width: 380px;
+    top: 0;
+  }
+  .safety .map .note {
+    bottom: 45px;
+    font-size: 18px;
+  }
+  .safety .button {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 35px;
+    width: 305px;
+  }
+
+  .prices .subtitle {
+    padding-left: 0;
+  }
+  .prices .prices-description-list {
+    margin: 0 49px 60px 49px;
+  }
+  .prices .prices-list .prices-list-item {
+    height: 355px;
+  }
+  .prices .prices-list .prices-list-item .price {
+    font-size: 40px;
+  }
+
+  .devices {
+    background-image: url(../img/mobile/devices.png);
+    background-size: 380px auto;
+    background-position: 85% 203px;
+    margin-bottom: 120px;
+    margin-top: 50px;
+    height: 690px;
+  }
+  .devices:before {
+    display: none;
+    background: none;
+  }
+  .devices .descr {
+    min-height: auto;
+  }
+
+  .encryption .title {
+    font-size: 14px;
+  }
+  .encryption .eye {
+    bottom: -145px;
+    left: 230px;
+    width: 135px;
+    height: 85px;
+  }
+  .encryption .speed-number {
+    font-size: 80px;
+    margin-bottom: 15px;
+  }
+  .encryption .cols .col {
+    width: 100%;
+  }
+  .encryption .cols .col:nth-child(1) {
+    height: 305px;
+  }
+  .encryption .cols .col:nth-child(1) .img {
+    width: 265px;
+    height: auto;
+    position: absolute;
+    margin: 0;
+    top: 80px;
+    left: 130px;
+  }
+  .encryption .cols .col:nth-child(1) .arrows {
+    transform: rotate(90deg);
+    left: -38px;
+    top: 220px;
+    background-size: 170px auto;
+    height: 50px;
+    position: absolute;
+    width: 130px;
+  }
+  .encryption .cols .col:nth-child(2) {
+    height: 215px;
+  }
+  .encryption .cols .col:nth-child(2) .img {
+    width: 225px;
+    height: auto;
+    position: absolute;
+    margin: 0;
+    top: 80px;
+    left: 165px;
+  }
+  .encryption .cols .note {
+    left: 40px;
+    bottom: 60px;
+  }
+  .encryption .note {
+    left: 40px;
+    bottom: 60px;
+    max-width: 220px;
+  }
+
+  .hero2 .img {
+    height: 270px;
+  }
+  .hero2 .img:before {
+    background-size: 260px auto;
+    height: 325px;
+    width: 260px;
+    margin-left: -130px;
+  }
+}
 .faq {
   background: url(../img/desktop/faq-bg.png);
   background-size: 1500px auto;
@@ -1589,6 +2036,7 @@ ul li {
 
 .faq-nav {
   display: flex;
+  flex-wrap: wrap;
   margin-bottom: 15px;
   margin-right: -11px;
 }
@@ -1695,7 +2143,7 @@ ul li {
 @media screen and (max-width: 640px) {
   .help {
     background: url(../img/mobile/help-bg.png) no-repeat;
-    background-position: 50px 107px;
+    background-position: -30px 107px;
     background-size: 564px auto;
   }
   .help .tabs-content {
@@ -1827,4 +2275,21 @@ ul li {
 
 .help-list .help-list-item {
   display: block;
+}
+
+@media screen and (max-width: 860px) {
+  .help .cols {
+    display: block;
+  }
+  .help .subtitle {
+    margin-top: 125px;
+    margin-bottom: 115px;
+  }
+  .help .help-nav .nav-item {
+    width: 152.91px;
+    height: 147.43px;
+  }
+  .help .help-nav .icon {
+    bottom: 80px;
+  }
 }

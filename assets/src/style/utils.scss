@@ -18,7 +18,6 @@
   border-radius: 20px;
 }
 
-
 .hidden-sm {
   @include screen-sm() {
     display: none !important;
@@ -27,8 +26,37 @@
 
 .visible-sm {
   display: none !important;
-
   @include screen-sm() {
+    display: block !important;
+  }
+}
+
+
+.hidden-md {
+  @include screen-md() {
+    display: none !important;
+  }
+}
+
+.visible-md {
+  display: none !important;
+
+  @include screen-md() {
+    display: block !important;
+  }
+}
+
+
+.hidden-lg {
+  @include screen-lg() {
+    display: none !important;
+  }
+}
+
+.visible-lg {
+  display: none !important;
+
+  @include screen-lg() {
     display: block !important;
   }
 }

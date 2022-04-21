@@ -5,10 +5,11 @@ const app = {
         app.initTabsNavigation();
         app.setNumbers();
         app.imgLightbox();
+        app.mobileMenu();
     },
     imgLightbox() {
         var modal = document.getElementById('lightbox')
-        if (modal.length) {
+        if (modal) {
             modal.addEventListener('show.bs.modal', function (event) {
                 var button = event.relatedTarget
                 var src = button.getAttribute('data-bs-src')
@@ -17,6 +18,23 @@ const app = {
             })
         }
 
+    },
+    mobileMenu() {
+        var close = $('#close-menu')
+        var open = $('#open-menu')
+        var nav = $('.header .nav')
+
+        console.log(close, 'close')
+        console.log(open, 'open')
+        console.log(nav, 'nav')
+
+        open.on('click', () => {
+            nav.addClass('slide')
+        })
+
+        close.on('click', () => {
+            nav.removeClass('slide')
+        })
     },
     setNumbers() {
         var numberEl = $('.tabs-content .tab-pane:not(.fade) .number')

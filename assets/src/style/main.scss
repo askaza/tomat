@@ -2,4 +2,19 @@
 @import "../../../node_modules/bootstrap/scss/_mixins";
 @import "../../../node_modules/bootstrap/scss/_modal";
 @import "../../../node_modules/bootstrap/scss/_transitions";
-@import "tomat";
+
+
+@import "fonts";
+@import "mixins";
+@import "reset";
+@import "utils";
+@import "layout";
+@import "form";
+@import "components";
+
+
+// pages
+@import "page-main";
+@import "page-faq";
+@import "page-help";
+

@@ -32,12 +32,21 @@
   justify-content: space-between;
   display: flex;
   padding: 30px 0 30px;
+  position: relative;
+  z-index: 10;
 }
 
 .nav {
   display: flex;
   margin-top: 12px;
-  align-items: baseline;
+  align-items: center;
+
+  .icon-close {
+    cursor: pointer;
+    display: none;
+    margin-right: 30px;
+  }
+
 }
 
 .menu {
@@ -77,13 +86,22 @@
 .lang {
   color: $font_color_base;
   font-size: $font_size_lg;
+  align-items: center;
+  display: flex;
   margin-right: 13px;
+  margin-bottom: 15px;
   text-decoration: none;
+
+  .icon {
+    margin-left: 5px;
+  }
 }
 
 .logo {
   display: block;
   text-decoration: none;
+  position: relative;
+  z-index: 10;
 
   .logo-img {
     display: block;
@@ -97,6 +115,12 @@
     font-size: 13px;
     font-weight: 800;
     text-transform: uppercase;
+  }
+
+  @include screen-sm {
+    .logo-text {
+      margin-top: 12px;
+    }
   }
 }
 
@@ -151,4 +175,113 @@
       text-align: right;
     }
   }
+}
+
+
+.nav-mobile {
+  display: none;
+
+  .icon-menu-mobile {
+    margin-right: 30px;
+  }
+  .lang {
+    margin-bottom: 0;
+  }
+}
+
+@include screen-container-sm() {
+  .nav-mobile {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav {
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    padding: 50px;
+    background: #f1f0f0;
+    border-radius: 0 0 30px 30px;
+    margin: 0;
+    justify-content: flex-end;
+
+
+    transition: top 0.35s ease;
+    top: -100%;
+
+    &.slide {
+      top: 0;
+    }
+
+    .icon-close {
+      display: block;
+    }
+  }
+
+  .lang {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+
+@include screen-md() {
+  .nav-mobile {
+    .lang {
+      display: none;
+    }
+  }
+  .nav {
+    display: block;
+
+    .icon-close {
+      display: block;
+      position: absolute;
+      right: 5px;
+      top: 50px;
+    }
+
+    .menu {
+      display: block;
+      padding-top: 160px;
+      width: 100%;
+
+      .menu-item {
+        display: block;
+        margin-bottom: 50px;
+        margin-right: 0;
+      }
+
+      a {
+        display: block;
+      }
+    }
+  }
+}
+
+
+.icon-menu-arrow {
+  background: url(../img/icons/arrow-menu.png) no-repeat;
+  background-size: contain;
+  display: block;
+  height: 12px;
+  width: 12px;
+}
+
+.icon-close {
+  background: url(../img/icons/close.png) no-repeat;
+  background-size: contain;
+  display: block;
+  height: 33px;
+  width: 33px;
+}
+
+.icon-menu-mobile {
+  background: url(../img/icons/menu-mobile.png) no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  display: block;
+  height: 31px;
+  width: 41px;
 }

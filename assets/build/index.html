@@ -15,12 +15,18 @@
                     <span class="logo-text">Professional vpn</span>
                 </a>
             
+                <div class="nav-mobile">
+                    <i class="icon icon-menu-mobile" id="open-menu"></i>
+                    <a href="/" class="lang">Ru <i class="icon icon-menu-arrow"></i></a>
+                </div>
+            
                 <nav class="nav">
                     <ul class="menu">
                         <li class="menu-item active"><a href="faq.html">ЧаВо</a></li>
                         <li class="menu-item"><a href="help.html">Инструкции</a></li>
                     </ul>
-                    <a href="/" class="lang">Ru <img class="arrow" src="img/icons/arrow-menu.png" width="8.5" height="11"/></a>
+                    <i class="icon icon-close" id="close-menu"></i>
+                    <a href="/" class="lang">Ru <i class="icon icon-menu-arrow"></i></a>
                 </nav>
             </header>
             <main>
@@ -34,49 +40,55 @@
                 </section>
             
                 <section class="safety">
-                    <div class="box gray rounded"></div>
-                    <div class="content">
-                        <h2>Абсолютно<br /> безопасно</h2>
+                    <div class="wrap">
+                        <div class="box"></div>
+                        <div class="content">
+                            <h2>Абсолютно<br /> безопасно</h2>
             
-                        <div class="map">
-                            <span class="note">Сервис работает под юрисдикцией Сейшельских Островов</span>
-                        </div>
-            
-                        <div class="cols">
-                                <div class="col">
-                                    <ul class="icons-list">
-                                        <li class="list-item">
-                                            <i class="icon icon-in"></i>
-                                            <span class="text">Точка входа в Чехии</span>
-                                        </li>
-                                        <li class="list-item">
-                                            <i class="icon icon-crypto"></i>
-                                            <span class="text">Оплата только криптой </span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col">
-                                    <ul class="icons-list">
-                                        <li class="list-item">
-                                            <i class="icon icon-out"></i>
-                                            <span class="text">Точка выхода в Нидерландах</span>
-                                        </li>
-                                        <li class="list-item">
-                                            <i class="icon icon-tg"></i>
-                                            <span class="text">Коннект через телеграм бота</span>
-                                        </li>
-                                    </ul>
-                                </div>
+                            <div class="map hidden-sm">
+                                <span class="note">Сервис работает под юрисдикцией Сейшельских Островов</span>
                             </div>
-                        <a href="/" class="button primary">Подробнее</a>
+            
+                            <div class="cols">
+                                    <div class="col">
+                                        <ul class="icons-list">
+                                            <li class="list-item">
+                                                <i class="icon icon-in"></i>
+                                                <span class="text">Точка входа в Чехии</span>
+                                            </li>
+                                            <li class="list-item">
+                                                <i class="icon icon-crypto"></i>
+                                                <span class="text">Оплата только криптой </span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col">
+                                        <ul class="icons-list">
+                                            <li class="list-item">
+                                                <i class="icon icon-out"></i>
+                                                <span class="text">Точка выхода в Нидерландах</span>
+                                            </li>
+                                            <li class="list-item">
+                                                <i class="icon icon-tg"></i>
+                                                <span class="text">Коннект через телеграм бота</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            <a href="/" class="button primary hidden-lg">Подробнее</a>
+                        </div>
                     </div>
+                    <div class="map visible-sm">
+                        <span class="note">Сервис работает под юрисдикцией Сейшельских Островов</span>
+                    </div>
+                    <a href="/" class="button primary visible-lg">Подробнее</a>
                 </section>
             
                 <section class="prices">
                     <div class="subtitle">
                         <h2>Тарифные <br /> планы</h2>
             
-                        <ul class="prices-description-list hidden-sm">
+                        <ul class="prices-description-list hidden-md">
                             <li class="list-item">Для покупки вас переадресует в ТГ-бота</li>
                             <li class="list-item">Выберите наиболее удобный вид тарификации</li>
                         </ul>
@@ -117,7 +129,7 @@
                             </div>
                         </div>
                     </div>
-                    <ul class="prices-description-list visible-sm">
+                    <ul class="prices-description-list visible-md">
                         <li class="list-item">Для покупки вас переадресует в ТГ-бота</li>
                         <li class="list-item">Выберите наиболее удобный вид тарификации</li>
                     </ul>
@@ -185,7 +197,7 @@
                     <img class="logo-img" src="img/logo.png" width="225" height="42"/>
                     <span class="logo-text">Professional vpn</span>
                 </a>
-                <p class="copyright">2015-2021 © Tomato Inc.</p>
+                <p class="copyright">2015-2021 &copy; Tomato Inc.</p>
             </footer>
             <script src="js/main.min.js"></script>
         </div>
